@@ -1,0 +1,157 @@
+#disp
+{
+    border-radius: 40px;
+    height: 50px;
+    width: 260px;
+    margin-bottom: 20px;
+    background: transparent;
+    color: aliceblue;
+    font-size: 14px;
+    border-width: 3px;
+    border-color: whitesmoke;
+}
+body
+{
+    background: linear-gradient(90deg, rgba(2,0,.6,1)10%,rgba(9,9,121,1)55%,rgba(2,0,.6,1)100%);
+}
+.btnop
+{
+    background-color: lightgray;
+    color: rgb(26, 150, 26);
+    border-radius: 50px;
+    height:  50px;
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin: 3px;
+}
+table
+{
+    margin-top: 50px;
+}
+.btn
+{
+    background-color: lightgrey;
+    border-radius: 50px;
+    height:  50px;
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Lucida Sans';
+    margin: 3px;
+}
+.btnclr
+{
+    background-color: lightgray;
+    color: orangered;
+    border-radius: 50px;
+    height:  50px;
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    margin: 3px;
+}
+.btneq
+{
+    background-color: lightgrey;
+    border-radius: 50px;
+    height:  50px;
+    width: 100px;
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Lucida Sans';
+    margin: 5px;
+}
+h1
+{
+    text-align: center;
+    font-family: 'Sans';
+    color: aliceblue;
+    margin-top: 150px;
+    animation: calcu 10s ;
+    font-size: 40px;
+}
+.box div{
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 5px solid white; 
+    animation: animate 14s linear infinite; 
+    border-radius:12px;
+} 
+.box div:nth-child(1)
+{
+    top:52%;
+    left:22%;
+    animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(2)
+{
+    top:12%;
+    left:32%;
+    animation: animate 9.5s linear infinite;
+}
+.box div:nth-child(3)
+{
+    top:82%;
+    left:12%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(4)
+{
+    top:92%;
+    left:92%;
+    animation: animate 16s linear infinite;
+}
+.box div:nth-child(5)
+{
+    top:52%;
+    left:79%;
+    animation: animate 10s linear infinite;
+}
+.box div:nth-child(6)
+{
+    top:92%;
+    left:32%;
+    animation: animate 11s linear infinite;
+}
+.box div:nth-child(7)
+{
+    top:82%;
+    left:72%;
+    animation: animate 12s linear infinite;
+}
+.box div:nth-child(8)
+{
+    top:12%;
+    left:62%;
+    animation: animate 8s linear infinite;
+}
+.box div:nth-child(9)
+{
+    top:12%;
+    left:93%;
+    animation: animate 7s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes calcu {
+    from
+    {
+        color: black;
+    }
+    to
+    {
+        color: aliceblue;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1>Calculator</h1>
+        
+        <table align="center">
+            <form>
+                <tr>
+                    <td colspan="4"><input type="text" name="display" id="disp"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btnclr" value="C" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="<-" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="%" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="/" onclick="show(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="7" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="8" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="9" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="X" onclick="show(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="4" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="5" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="6" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="-" onclick="show(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="1" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="2" onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="3" onclick="show(this)"></td>
+                    <td><input type="button" class="btnop" value="+" id="+"onclick="show(this)"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="." onclick="show(this)"></td>
+                    <td><input type="button" class="btn" value="0" onclick="show(this)"></td>
+                    <td colspan="2"><input type="button" class="btneq" value="=" onclick="calcuate()"></td>
+                </tr>
+            </form>
+        </table>
+        <script>
+            var count=0;
+            var display = document.getElementById("disp");
+            var left,right,operator;
+            function show(btn)
+            {     
+                    
+                if(btn.value =="C"){
+                    count=0;
+                display.value="";}
+                else if(btn.value=="%"|| btn.value=="/" || btn.value=="X" || btn.value=="-" || btn.value=="+")
+                {
+                    if(count==0){
+                        left = display.value;
+                        operator = btn.value;
+                    display.value += btn.value;
+                    count=1;}
+                }
+                else if(btn.value=="<-")
+                {
+                    if(display.value.charAt(-1)==operator){
+                    count=0;
+                    }
+                    display.value = display.value.slice(0,-1);
+                }
+                else{
+
+                display.value += btn.value;   
+            }
+            }
+            function calcuate()
+            {
+                    if(display.value=="")
+                    {
+                        alert("Calculation field empty!");
+                    }
+                    else
+                    {
+                        right = display.value.slice(left.length+1);
+                        
+                        left = parseFloat(left);
+                        right = parseFloat(right);
+                        if(count==1){
+                        switch(operator)
+                        {
+                            case "+":
+                                display.value = left + right;
+                                break; 
+                            case "-":
+                                display.value = left - right;
+                                break;
+                            case "X":
+                                display.value = left * right;
+                                break; 
+                            case "/":
+                                display.value = left/right;
+                                break; 
+                            case "%":
+                                display.value = left % right;
+                                break; 
+                            default:
+                                display.value="XXX";
+                        }}
+                        else
+                        {
+                            alert("No operator!");
+                        }
+                    }
+            }
+        </script>
+    </body>
+</html>
